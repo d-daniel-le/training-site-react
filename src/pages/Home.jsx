@@ -771,7 +771,7 @@ function HomePage () {
             }
             {
                 service !== "Select a Service" && sfs === "Company Pay For" && (
-                    <div>
+                    <div className='recommended-service'>
                         <h2>Recommended Service</h2>
 
                         <h5>Solutions:</h5>
