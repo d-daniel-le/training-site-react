@@ -1,0 +1,140 @@
+.homepage-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10% 0;
+    height: 100vh;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px solid #A7A9AC;
+    padding: 25px;
+    width: 750px;
+    border-radius: 25px;
+}
+
+.input-container input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-bottom: 0.25px solid #003D79;
+    transition: border-bottom 0.2s ease;
+}
+
+.input-container input:focus{
+    outline: none;
+    border-bottom: 1px solid #003D79;
+}
+
+.input-container #service{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+
+.input-container #service:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+
+.result-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px solid #A7A9AC;
+    margin: 12px 0px;
+    padding: 25px;
+    width: 750px;
+    border-radius: 25px;
+}
+.result-container[hidden]{
+    display: none;
+}
+
+.result-container .result-service{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+
+.result-container .result-service:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+.recommended-service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0.5px solid #A7A9AC;
+    margin: 12px 0px;
+    padding: 25px;
+    width: 750px;
+    border-radius: 25px;
+    overflow-wrap: anywhere;
+}
+#enrollment-questions{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#enrollment-questions:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+#new-student-questions{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#new-student-questions:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+#transcript-questions{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#transcript-questions:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+#missing-classes{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#missing-classes:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+#gen-grad-ques{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#gen-grad-ques:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
+#appointment-question{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#appointment-question:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}
