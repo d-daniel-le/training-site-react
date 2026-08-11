@@ -149,6 +149,7 @@ function HomePage () {
                                     <option value="College Fund - GET Plan">College Fund - GET Plan</option>
                                     <option value="Payment Receipt">Payment Receipt</option>
                                     <option value="Account Charges">Account Charges</option>
+                                    <option value="Company Pay For">Company Pay For</option>
                                 </select>
                             )
                         }
@@ -765,6 +766,16 @@ function HomePage () {
 
                         <h5>Solutions:</h5>
                         <p>If the student has a specific question about the charges that are on their account, Check them into the SFS. They will be able to help them answer those questions.</p>
+                    </div>
+                )
+            }
+            {
+                service !== "Select a Service" && sfs === "Company Pay For" && (
+                    <div>
+                        <h2>Recommended Service</h2>
+
+                        <h5>Solutions:</h5>
+                        <p>If the students' employer is paying for their classes, check them into Student Financial Services to learn more on how to get their fund applied</p>
                     </div>
                 )
             }
