@@ -45,7 +45,7 @@ function HomePage () {
                     <option value="Select a Service" selected>Select a Service</option>
                     <option value="Enrollment Services">Enrollment Services</option>
                     <option value="Financial Aid">Financial Aid</option>
-                    <option value="Evaluation and Graduation">Evaluation and Graduation</option>
+                    <option value="Evaluation and Graduation">Evaluations and Graduation</option>
                     <option value="Placement and Testing">Placement and Testing</option>
                     <option value="Welcome Center">Welcome Center</option>
                     <option value="Student Financial Services">Student Financial Services</option>
@@ -147,9 +147,9 @@ function HomePage () {
                                     <option value="Payment Plan">Payment Plan</option>
                                     <option value="ORCA Card Pick-up">ORCA Card Pick-up</option>
                                     <option value="College Fund - GET Plan">College Fund - GET Plan</option>
-                                    <option value="Payment Receipt">Payment Receipt</option>
+                                    <option value="Payment Receipt/Invoices">Payment Receipt/Invoices</option>
                                     <option value="Account Charges">Account Charges</option>
-                                    <option value="Company Pay For">Company Pay For</option>
+                                    <option value="3rd-party Payment">3rd-party Payment</option>
                                 </select>
                             )
                         }
@@ -471,7 +471,7 @@ function HomePage () {
                         <h2>Recommended Service</h2>
 
                         <h5>Solutions</h5>
-                        <p>Check them in to Financial Aid. If they are comfortable with dropping their transcript in the drop box, they can use the drop box across from the desk.</p>
+                        <p>Check them in to Financial Aid. If they are comfortable with dropping their documents in the drop box, they can use the drop box across from the desk.</p>
                         
                     </div>
                 )
@@ -510,7 +510,7 @@ function HomePage () {
                 )
             }
 
-            {/* Evaluation and graduatioon */}
+            {/* Evaluations and graduatioon */}
 
             {
                 service !== "Select a Service" && evalGrad === "Official Transcripts sent from another college" && (
@@ -519,7 +519,7 @@ function HomePage () {
 
                         <h5>Solutions:</h5>
                         
-                        <p>If the student is wanting to check if their trascript has been received, check them into Evaluation and Graduation.</p>
+                        <p>If the student is wanting to check if their transcript has been received, check them into Evaluations and Graduation.</p>
                     </div>
                 )
             }
@@ -733,7 +733,7 @@ function HomePage () {
                         <h2>Recommended Service</h2>
 
                         <h5>Solutions:</h5>
-                        <p>- If the student has requested online for an ORCA card, check them into SFS to pick up their ORCA card.</p>
+                        <p>- If the student has requested online for an ORCA card and received an email to pick up their ORCA card, check them into SFS to pick up their ORCA card.</p>
                         <p>- If the student has NOT requested online, they can scan the QR code at the desk to request online. </p>
                         <p>ORCA online request form: <a href="https://www.bellevuecollege.edu/maps-directions/bus-orca-card/">https://www.bellevuecollege.edu/maps-directions/bus-orca-card/</a></p>
                     </div>
@@ -750,7 +750,7 @@ function HomePage () {
                 )
             }
             {
-                service !== "Select a Service" && sfs === "Payment Receipt" && (
+                service !== "Select a Service" && sfs === "Payment Receipt/Invoices" && (
                     <div className='recommended-service'>
                         <h2>Recommended Service</h2>
 
@@ -770,7 +770,7 @@ function HomePage () {
                 )
             }
             {
-                service !== "Select a Service" && sfs === "Company Pay For" && (
+                service !== "Select a Service" && sfs === "3rd-party Payment" && (
                     <div className='recommended-service'>
                         <h2>Recommended Service</h2>
 
