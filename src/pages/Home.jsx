@@ -454,8 +454,8 @@ function HomePage () {
                 )
             }
             {
-                service !== "Select a Service" && waiver === "Residency" && (
-                    <div>
+                service !== "Select a Service" && enrollmentServices === "Residency" && (
+                    <div className='recommended-service'>
                         <h2>Recommended Service</h2>
 
                         <p>NOTE: For students to be considered as a Washington State resident, they will have to be in Washington State for 12 months consecutively. If the student was an international student and recently became a Permanent Resident/Green Card, their residency will start from when they have received their Permanent Resident/ Green Card.</p>
