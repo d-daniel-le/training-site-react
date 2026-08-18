@@ -45,7 +45,7 @@ function HomePage () {
                     <option value="Select a Service" selected>Select a Service</option>
                     <option value="Enrollment Services">Enrollment Services</option>
                     <option value="Financial Aid">Financial Aid</option>
-                    <option value="Evaluation and Graduation">Evaluations and Graduation</option>
+                    <option value="Evaluations and Graduation">Evaluations and Graduation</option>
                     <option value="Placement and Testing">Placement and Testing</option>
                     <option value="Welcome Center">Welcome Center</option>
                     <option value="Student Financial Services">Student Financial Services</option>
@@ -86,6 +86,7 @@ function HomePage () {
                                     <option value="Verification Letter of Enrollment">Verification Letter of Enrollment</option>
                                     <option value="Running Start">Running Start</option>
                                     <option value="Waiver">Waiver</option>
+                                    <option value="Residency">Residency</option>
                                 </select>        
                             )
                         }
@@ -105,7 +106,7 @@ function HomePage () {
                         }
 
                         {
-                            service === "Evaluation and Graduation" && (
+                            service === "Evaluations and Graduation" && (
                                 <select name="evaluation-graduation" className='result-service' id="evaluation-graduation" onChange={(e) => {setEvalGrad(e.target.value)}}>
                                     <option value="Select a Service" selected>Select a Service</option>
                                     <option value="General Graduation Questions">General Graduation Questions</option>
@@ -409,6 +410,7 @@ function HomePage () {
                             <option value="Select An Answer">Select An Answer</option>
                             <option value="State Employee Waiver">State Employee Waiver</option>
                             <option value="Senior Waiver">Senior Waiver</option>
+                            <option value="Non-Resident Tuition Waiver">Non-Resident Tuition Waiver</option>
                         </select>
                         
                     </div>
@@ -437,6 +439,28 @@ function HomePage () {
                         <p>NOTE: Senior waiver student is only allowed to register one business day before the quarter starts if they want to use the Senior Waiver</p>
                         <p>Senior Waiver form: <a href="https://forms.bellevuecollege.edu/studentcentral/senior-waiver-request-form/" target='_blank'>https://forms.bellevuecollege.edu/studentcentral/senior-waiver-request-form/</a></p>
                         <p>Make sure they register for the class before submitting the Senior Waiver form</p>
+                    </div>
+                )
+            }
+            {
+                service !== "Select a Service" && waiver === "Non-Resident Tuition Waiver" && (
+                    <div className='recommended-service'>
+                        <h2>Recommended Service</h2>
+
+                        <p>NOTE: If students are taking classes online but they are an out-of-state student, the non-resident waiver will allow them to pay a tuition rate that is as close to the Resident rate as it can. However, this doesn't mean that they are going to pay the resident rate.</p>
+                        <p>Tuition Waiver: <a href="https://forms.bellevuecollege.edu/studentcentral/tuition-waiver-residency-documentation/" target='_blank'>https://forms.bellevuecollege.edu/studentcentral/tuition-waiver-residency-documentation/</a></p>
+                        <p>If the students have any further questions, check them into the Enrollment Services</p>
+                    </div>
+                )
+            }
+            {
+                service !== "Select a Service" && waiver === "Residency" && (
+                    <div>
+                        <h2>Recommended Service</h2>
+
+                        <p>NOTE: For students to be considered as a Washington State resident, they will have to be in Washington State for 12 months consecutively. If the student was an international student and recently became a Permanent Resident/Green Card, their residency will start from when they have received their Permanent Resident/ Green Card.</p>
+
+                        <p>For any Residency questions, check the student in to Enrollment Services for further assistance</p>
                     </div>
                 )
             }
