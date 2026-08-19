@@ -138,3 +138,13 @@
     border: 1px solid #003D79;
     border-radius: 15px;
 }
+#wc-questions{
+    padding: 15px;
+    border: 0.5px solid #A7A9AC;
+    border-radius: 15px;
+}
+#wc-questions:hover{
+    padding: 15px;
+    border: 1px solid #003D79;
+    border-radius: 15px;
+}

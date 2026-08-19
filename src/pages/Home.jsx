@@ -23,6 +23,8 @@ function HomePage () {
     const [appointmentQuestion, setAppointmentQuestion] = useState("Select An Answer")
     // Student Financial Services
     const [sfs, setSfs] = useState("Select a Service")
+    // NSA
+    const [nsa, setNsa] = useState("Select An Answer")
     
 
     return(
@@ -134,6 +136,7 @@ function HomePage () {
                             service === "Welcome Center" && (
                                 <select name="welcome-center" className='result-service' id="welcome-center" onChange={(e)=> {setWelcomeCenter(e.target.value)}}>
                                     <option value="Select a Service" selected>Select a Service</option>
+                                    <option value="New Student Advisor (NSA)">New Student Advisor</option>
                                     <option value="Do they have an appointment?">Do they have an appointment?</option>
                                     <option value="Campus Tour">Campus Tour</option>
                                 </select>
@@ -458,7 +461,7 @@ function HomePage () {
                     <div className='recommended-service'>
                         <h2>Recommended Service</h2>
 
-                        <p>NOTE: For students to be considered as a Washington State resident, they will have to be in Washington State for 12 months consecutively. If the student was an international student and recently became a Permanent Resident/Green Card, their residency will start from when they have received their Permanent Resident/ Green Card.</p>
+                        <p>NOTE: For most students to be considered as a Washington State resident and pay "resident" tuition, they must have lived in Washington State for at least 12 months consecutively.</p>
 
                         <p>For any Residency questions, check the student in to Enrollment Services for further assistance</p>
                     </div>
@@ -725,6 +728,66 @@ function HomePage () {
                         <p>NOTE: </p>
                         <p>- There is a possibility that students drop-in for a campus tour. Generally, we can add them to the list on the same day. Make sure to get their name, phone number, and email address (either personal or Bellevue College email is fine)</p>
                         <p>- If it is an employee, nothing is needed to be noted down. As long as they let us know that they are an employee and they are there for a tour then they are all set.</p>
+                    </div>
+                )
+            }
+            {
+                service !== "Select a Service" && welcomeCenter === "New Student Advisor (NSA)" && (
+                    <div className='recommended-service'>
+                        <h2>Recommended Service</h2>
+
+                        <select name="clarify-question" id="wc-questions" onChange={(e)=> {setNsa(e.target.value)}}>
+                            <option value="Select An Answer">Select An Answer</option>
+                            <option value="Regular College Students">Regular College Students</option>
+                            <option value="Running Start Students">Running Start Students</option>
+                            <option value="Underage Students">Underage Students</option>
+                        </select>
+
+                        {
+                            nsa !== "Select An Answer" && nsa === "Regular College Students" && (
+                                <>
+                                    <h5>Solutions:</h5>
+
+                                    <p>NOTE: Help the students as much as you can through the admission process before sending them to one of the New Student advisor.</p>
+
+                                    <p>If Regular College Students is looking to see an advisor or specifically request to rather see an advisor instead, you can do one of the following:</p>
+                                    <p>- Schedule an Appointment Online: <a href="https://www.bellevuecollege.edu/about-us/welcome-center/admission-advising/">https://www.bellevuecollege.edu/about-us/welcome-center/admission-advising/</a></p>
+                                    <p>- If appointments are not available online, they can send an email to <a href="mailto: welcome@bellevuecollege.edu">welcome@bellevuecollege.edu</a> to get further assistance</p>                                
+                                </>
+                            ) 
+                        }
+
+                        {
+                            nsa !== "Select An Answer" && nsa === "Running Start Students" && (
+                                <>
+                                    <h5>Solutions:</h5>
+
+                                    <p>For Prospective Running Start Students, they can either:</p>
+                                    <p>- Schedule an appointment with a New Student Advisor online at <a href="https://www.bellevuecollege.edu/about-us/welcome-center/admission-advising/">https://www.bellevuecollege.edu/about-us/welcome-center/admission-advising/</a></p>
+                                    <p>OR</p>                      
+                                    <p>- If appointments are not available online, they can send an email to <a href="mailto: welcome@bellevuecollege.edu">welcome@bellevuecollege.edu</a> to get further assistance</p>
+                                    <p>- For other questions, please refer back to the Enrollment Services or Academic Advising section for more details</p>
+                                </>
+                            ) 
+                        }
+
+                        {
+                            nsa !== "Select An Answer" && nsa === "Underage Students" && (
+                                <>
+                                    <h5>Solutions:</h5>
+
+                                    <p>NOTE: Refer to the following Underage Applicants website to answer as many questions as you can: <a href="https://www.bellevuecollege.edu/admissions-aid/getting-started/high-school-younger/">https://www.bellevuecollege.edu/admissions-aid/getting-started/high-school-younger/</a></p>
+                                    <p>If prospective underage students are looking for an advisor, have them schedule an appointment with a New Student Advisor via the following methods:</p>
+                                    <p>- Schedule an appointment with a New Student Advisor online at <a href="https://www.bellevuecollege.edu/about-us/welcome-center/admission-advising/">https://www.bellevuecollege.edu/about-us/welcome-center/admission-advising/</a></p>
+                                    <p>OR</p>                      
+                                    <p>- If appointments are not available online, they can send an email to <a href="mailto: welcome@bellevuecollege.edu">welcome@bellevuecollege.edu</a> to get further assistance</p>
+
+                                </>
+                            ) 
+                        }
+
+
+
                     </div>
                 )
             }
