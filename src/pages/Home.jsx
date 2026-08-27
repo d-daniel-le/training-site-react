@@ -16,6 +16,7 @@ function HomePage () {
     // Evaluation and Graduation
     const [evalGrad, setEvalGrad] = useState("Select a Service")
     const [genEvalType, setGenEvalType] = useState("Select an Answer")
+    const [offTranscript, setOffTranscript] = useState("Select an Answer")
     // Placement and Testing
     const [placeTest, setPlaceTest] = useState("Select a Service")
     // Welcome Center
@@ -116,7 +117,7 @@ function HomePage () {
                                     <option value="Transfer Credit Processing Status">Transfer Credit Processing Status</option>
                                     <option value="Graduation Application">Graduation Application</option>
                                     <option value="Diploma">Diploma</option>
-                                    <option value="Look over the transcript before applying">Look over the transcript before applying</option>
+                                    <option value="Official Transcripts From Another College">Official Transcripts From Another College</option>
                                 </select>
                             )
                         }
@@ -626,14 +627,39 @@ function HomePage () {
             }
 
             {
-                service !== "Select a Service" && evalGrad === "Look over the transcript before applying" && (
+                service !== "Select a Service" && evalGrad === "Official Transcripts From Another College" && (
                     <div className='recommended-service'>
                         <h2>Recommended Service</h2>
 
-                        <h5>Solutions:</h5>
-                        <p>Potentially, New Student Advisors will be able to look at their transcript as they are planning to apply to the college. As of this moment, we are not able to look at their transcript yet before they apply. If they have any questions, they can reach out to Admission Advising for any further assistance </p>
-                        <p>Email: <a href="mailto: welcome@bellevuecollege.edu">welcome@bellevuecollege.edu</a></p>
                         
+
+                        <h3>Are they a prospective student or current students?</h3>
+                        <select name="clarify-question" id="official-transcript" onChange={(e) => {setOffTranscript(e.target.value)}}>
+                            <option value="Select An Answer">Select An Answer</option>
+                            <option value="Prospective Student">Prospective Student</option>
+                            <option value="Current Student">Current Student</option>
+                        </select>
+                        
+                        {
+                            offTranscript !== "Select An Answer" && offTranscript === "Prospective Student" && (
+                                <>
+                                    <h5>Solutions:</h5>
+                                    <p>Potentially, New Student Advisors will be able to look at their transcript as they are planning to apply to the college. As of this moment, we are not able to look at their transcript yet before they apply. If they have any questions, they can reach out to Admission Advising for any further assistance </p>
+                                    <p>Email: <a href="mailto: welcome@bellevuecollege.edu">welcome@bellevuecollege.edu</a></p>
+                                </>
+                            )
+                        }
+
+                        {
+                            offTranscript !== "Select An Answer" && offTranscript === "Current Student" && (
+                                <>
+                                    <h5>Solutions:</h5>
+                                    <p>If they already turned in your official transcript to transfer their credits over, check them into Evaluation and Graduation office. They will be able to further assist them with that</p>
+
+                                </>
+                            )
+                        }
+
 
                     </div>
                 )
