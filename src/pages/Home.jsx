@@ -26,6 +26,8 @@ function HomePage () {
     const [sfs, setSfs] = useState("Select a Service")
     // NSA
     const [nsa, setNsa] = useState("Select An Answer")
+    // Academic Advising
+    const [aa, setAa] = useState("Select a Service")
     
 
     return(
@@ -44,6 +46,7 @@ function HomePage () {
                     setPlaceTest("Select a Service")
                     setWelcomeCenter("Select a Service")
                     setSfs("Select a Service")
+                    setAa("Select a Service")
                 }}>
                     <option value="Select a Service" selected>Select a Service</option>
                     <option value="Enrollment Services">Enrollment Services</option>
@@ -52,6 +55,7 @@ function HomePage () {
                     <option value="Placement and Testing">Placement and Testing</option>
                     <option value="Welcome Center">Welcome Center</option>
                     <option value="Student Financial Services">Student Financial Services</option>
+                    <option value="Academic Advising">Academic Advising</option>
                 </select>
             </div>
 
@@ -117,7 +121,7 @@ function HomePage () {
                                     <option value="Transfer Credit Processing Status">Transfer Credit Processing Status</option>
                                     <option value="Graduation Application">Graduation Application</option>
                                     <option value="Diploma">Diploma</option>
-                                    <option value="Official Transcripts From Another College">Official Transcripts From Another College</option>
+                                    <option value="Diploma Replacement & Correction">Diploma Replacement & Correction</option>
                                 </select>
                             )
                         }
@@ -155,6 +159,16 @@ function HomePage () {
                                     <option value="Payment Receipt/Invoices">Payment Receipt/Invoices</option>
                                     <option value="Account Charges">Account Charges</option>
                                     <option value="3rd-party Payment">3rd-party Payment</option>
+                                </select>
+                            )
+                        }
+
+                        {
+                            service === "Academic Advising" && (
+                                <select name="academic-advising" className='result-service' id="academic-advising" onChange={(e) => {setAa(e.target.value)}}>
+                                    <option value="Select a Service" selected>Select a Service</option>
+                                    <option value="Schedule An Appointment">Schedule An Appointment</option>
+                                    <option value="Drop-in Academic Advising">Drop-in Academic Advising</option>
                                 </select>
                             )
                         }
@@ -569,7 +583,12 @@ function HomePage () {
                                     <h5>Solutions:</h5>
                                     {
                                         genEvalType === "Their Reqired Classes" && (
-                                            <p>Send them into Academic Advising Drop-in on Tuesday and Wednesday: 9:30AM - 12PM, 1-4PM (Summer Hours are varied)</p>
+                                            <>
+                                                <p>Have them scheduled an appointment online with their pathway advisor to check if they are able to graduate.</p>
+
+                                                <p>Link to the Academic Advising to Schedule Appointment: <a href="https://www.bellevuecollege.edu/advising/schedule/">https://www.bellevuecollege.edu/advising/schedule/</a></p>
+                                            </>
+                                            
                                         )
                                     }
 
@@ -818,6 +837,8 @@ function HomePage () {
                 )
             }
 
+            
+
             {/* Student Financial Services */}
 
             {
@@ -893,8 +914,24 @@ function HomePage () {
                 )
             }
 
+            {/* Academic Advising */}
+            {
+                service !== "Select a Service" && aa === "Schedule An Appointment" && (
+                    <div className='recommended-service'>
+                        <h2>Recommended Service</h2>
+                        
+                        <h5>Solutions:</h5>
+                        <p>If the student is looking to schedule an appointment with an Academic Advisor, Please make sure they have the following 3 things:</p>
+                        <ul>
+                            <li>- They have to already be a student at Bellevue College</li>
+                            <li>- They have to already be done with their orientation</li>
+                            <li>- They have to have the placement</li>
+                        </ul>
 
-
+                        <p>If they have done all 3 items above, direct them to schedule an appointment online at: <a href="https://www.bellevuecollege.edu/advising/">https://www.bellevuecollege.edu/advising/</a></p>
+                    </div>
+                )
+            }
 
 
         </div>
